@@ -10,13 +10,13 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
         isExpanded ? '-translate-x-0' : '-translate-x-full'
       } lg:hidden duration-500 fixed top-0 left-0 w-screen z-20`}
     >
-      <div className="md:w-1/3 sm:w-1/2 w-3/4 bg-white shadow-lg h-screen">
+      <div className="md:w-1/3 sm:w-1/2 w-3/4 bg-white dark:bg-zinc-900 shadow-lg h-screen">
         <div className="flex justify-end">
           <span
             onClick={toggleNavbar}
-            className="rounded-full cursor-pointer text-gray-400 hover:bg-slate-400 hover:text-white"
+            className="rounded-full cursor-pointer text-gray-500 hover:bg-slate-400 dark:hover:text-gray-100"
           >
-            <BsX className="text-2xl" />
+            <BsX className="text-2xl " />
           </span>
         </div>
         <div className="nav space-y-1 px-5 pt-2">
@@ -24,7 +24,7 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
             <NavLink
               to="/login"
               onClick={toggleNavbar}
-              className="hover:bg-blue-100 rounded-md block transition ease-in-out px-3 py-2 text-base"
+              className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base"
             >
               <div className="flex items-center">
                 <BsArrowRightSquareFill />
@@ -37,7 +37,7 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
               to={item.to}
               key={i}
               onClick={toggleNavbar}
-              className="hover:bg-blue-100 rounded-md block transition ease-in-out px-3 py-2 text-base"
+              className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base"
             >
               <div className="flex items-center">
                 {item.icon}
@@ -49,7 +49,7 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
             <NavLink
               to="/logout"
               onClick={toggleNavbar}
-              className="hover:bg-blue-100 rounded-md block transition ease-in-out px-3 py-2 text-base"
+              className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base"
             >
               <div className="flex items-center">
                 <BsArrowLeftSquareFill />

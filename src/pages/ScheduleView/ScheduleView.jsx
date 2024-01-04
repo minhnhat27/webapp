@@ -69,24 +69,30 @@ export default function ScheduleView() {
     return (
       <>
         <div className="flex justify-start my-3">
-          <select onChange={handleChangeWeek} className="border rounded-sm w-44 p-1 outline-none cursor-pointer">
+          <select
+            onChange={handleChangeWeek}
+            className="border rounded-sm w-44 p-1 outline-none cursor-pointer dark:bg-zinc-800 dark:text-gray-300"
+          >
             {[...Array(weekTotal)].map((_, i) => (
               <option key={i} value={i + 1}>
                 Tuần {i + 1}
               </option>
             ))}
           </select>
-          <select onChange={handleChangeSession} className="border rounded-sm p-1 outline-none cursor-pointer mx-2">
+          <select
+            onChange={handleChangeSession}
+            className="border rounded-sm p-1 outline-none cursor-pointer mx-2 dark:bg-zinc-800 dark:text-gray-300"
+          >
             <option value="Morning">Buổi sáng</option>
             <option value="Afternoon">Buổi chiều</option>
           </select>
-          <Button onClick={downloadSchedule} title="Tải về lịch thực hành">
+          <Button onClick={downloadSchedule} title="Tải về lịch thực hành" className="dark:text-gray-300">
             <BsFileEarmarkArrowDownFill className="text-2xl" />
           </Button>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-center min-w-fit text-base bg-white">
+          <table className="w-full text-center min-w-fit text-base bg-white dark:bg-zinc-800 dark:text-gray-300">
             <thead>
               <tr>
                 <th rowSpan="2">Phòng</th>
@@ -125,7 +131,7 @@ export default function ScheduleView() {
                             itemSchedule.phong === item
                           ) {
                             return (
-                              <p key={i}>
+                              <p key={i} className="dark:text-gray-300">
                                 {itemSchedule.manhomhp} - {itemSchedule.tenhp} <br /> {itemSchedule.hoten}
                               </p>
                             )

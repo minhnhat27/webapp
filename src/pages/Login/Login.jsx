@@ -101,18 +101,18 @@ export default function Login() {
     <>
       {loading && <Loading />}
       <div className="flex h-full items-center justify-center">
-        <div className="flex item s-center justify-center lg:w-2/5 md:w-1/2 sm:w-3/4 w-11/12">
-          <Wrapper className="mb-0 px-10 py-5">
+        <div className="flex item justify-center lg:w-2/5 md:w-1/2 sm:w-3/4 w-11/12">
+          <Wrapper className="mb-0 px-10 py-5 dark:bg-zinc-800">
             <div className="relative flex items-center justify-center">
               <Image width="70" height="70" className="py-2 fs-4" src={logo} alt="logo" />
             </div>
-            <p className="text-center font-semibold text-xl">Đăng nhập vào hệ thống</p>
+            <p className="text-center font-semibold text-xl dark:text-gray-300">Đăng nhập vào hệ thống</p>
             <form onSubmit={handleSubmit(handleSubmitLogin)}>
               <div className="my-3">
-                <input
+                <Input
                   type="text"
                   name="username"
-                  className="w-full p-2 border rounded-md focus:outline-blue-500"
+                  className="w-full p-2 border rounded-md focus:outline-blue-500 dark:bg-gray-700 dark:text-gray-300"
                   placeholder="Mã cán bộ/Email"
                   id="username"
                   {...register('username', { required: 'Không được để trống' })}
@@ -121,9 +121,9 @@ export default function Login() {
               </div>
               <div className="my-3">
                 <div className="flex">
-                  <input
+                  <Input
                     type={showPassword ? 'text' : 'password'}
-                    className="w-full p-2 border rounded-md focus:outline-blue-500"
+                    className="w-full p-2 border rounded-md focus:outline-blue-500 dark:bg-gray-700 dark:text-gray-300"
                     placeholder="Mật khẩu"
                     name="password"
                     id="password"
@@ -135,9 +135,9 @@ export default function Login() {
                     className="flex justify-around items-center cursor-pointer"
                   >
                     {showPassword ? (
-                      <BsEyeSlash className="absolute mr-10" size={20} />
+                      <BsEyeSlash className="absolute mr-10 dark:text-gray-300" size={20} />
                     ) : (
-                      <BsEye className="absolute mr-10" size={20} />
+                      <BsEye className="absolute mr-10 dark:text-gray-300" size={20} />
                     )}
                   </Button>
                 </div>
@@ -146,7 +146,7 @@ export default function Login() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <Input type="checkbox" id="flexCheckChecked" />
-                  <label className="ml-1" htmlFor="flexCheckChecked">
+                  <label className="ml-1 dark:text-gray-300" htmlFor="flexCheckChecked">
                     Ghi nhớ
                   </label>
                 </div>

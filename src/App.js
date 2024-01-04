@@ -4,7 +4,7 @@ import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 
-import { GenerateRoutes, CheckPrivateRoutes, privateRoutes, publicRoutes } from './services/routes'
+import { GeneratePublicRoutes, GeneratePrivateRoutes } from './services/routes'
 import { reducer, initialState } from './services/authReducer'
 import NotFound from './components/NotFound/'
 import AuthService from './services/auth-service'
@@ -18,8 +18,8 @@ function App() {
         <Router>
           <ReactNotifications />
           <Routes>
-            {GenerateRoutes(publicRoutes)}
-            <Route element={<CheckPrivateRoutes />}>{GenerateRoutes(privateRoutes)}</Route>
+            {GeneratePublicRoutes()}
+            {GeneratePrivateRoutes(state.isAuthenticated)}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

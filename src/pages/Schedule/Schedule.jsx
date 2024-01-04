@@ -121,14 +121,14 @@ export default function Schedule() {
               onDragOver={handleDragOver}
               onDrop={handleDrop}
               id="list"
-              className="sticky space-y-2 px-4 top-16 min-w-40 max-h-96 min-h-36 overflow-auto text-base p-2"
+              className="sticky space-y-2 px-4 top-16 min-w-40 max-h-96 min-h-36 overflow-auto text-base p-2 dark:bg-zinc-600"
             >
               {teaching.map((item, i) => (
                 <div
                   key={i}
                   draggable
                   onDragStart={handleDragStart}
-                  className="item text-center cursor-pointer rounded-md m-1 p-2 text-xs border border-slate-300 bg-slate-100 hover:bg-slate-300"
+                  className="item text-center cursor-pointer rounded-md m-1 p-2 text-xs border border-slate-300 bg-slate-100 text-black hover:bg-slate-300 dark:bg-gray-300 dark:hover:bg-slate-400"
                   id={`${item.sttbuoithuchanh}${item.manhomhp}`}
                   data-stt={item.sttbuoithuchanh}
                   data-manhom={item.manhomhp}
@@ -143,7 +143,7 @@ export default function Schedule() {
             <div className="space-y-3">
               {[...Array(week)].map((_, weekIndex) => (
                 <div key={weekIndex} className="overflow-x-auto">
-                  <table className="w-full text-base bg-white">
+                  <table className="w-full text-base bg-white dark:bg-zinc-800 dark:text-gray-300">
                     <thead className="text-center">
                       <tr>
                         <th rowSpan="2">Tuần {weekIndex + 1}</th>
@@ -192,7 +192,7 @@ export default function Schedule() {
                                         key={i}
                                         draggable
                                         onDragStart={handleDragStart}
-                                        className="item text-center cursor-pointer rounded-md m-1 p-2 text-xs border border-slate-300 bg-slate-100 hover:bg-slate-300"
+                                        className="item text-center cursor-pointer rounded-md m-1 p-2 text-xs border border-slate-300 bg-slate-100 text-black hover:bg-slate-300 dark:bg-gray-300 dark:hover:bg-slate-400"
                                         id={`${item.sttbuoithuchanh}${item.manhomhp}`}
                                         data-stt={item.sttbuoithuchanh}
                                         data-manhom={item.manhomhp}
@@ -234,7 +234,7 @@ export default function Schedule() {
                                         key={i}
                                         draggable
                                         onDragStart={handleDragStart}
-                                        className="item text-center cursor-pointer rounded-md m-1 p-2 text-xs border border-slate-300 bg-slate-100 hover:bg-slate-300"
+                                        className="item text-center cursor-pointer rounded-md m-1 p-2 text-xs border border-slate-300 bg-slate-100 text-black hover:bg-slate-300 dark:bg-gray-300 dark:hover:bg-slate-400"
                                         id={`${item.sttbuoithuchanh}${item.manhomhp}`}
                                         data-stt={item.sttbuoithuchanh}
                                         data-manhom={item.manhomhp}

@@ -10,13 +10,13 @@ export default function SideBar({ navigation, handleLogout }) {
 
   return (
     <>
-      <nav className="nav px-2 bg-slate-50">
+      <nav className="nav px-2">
         <div className="w-full mt-20 space-y-1 flex-col items-center justify-center">
           {navigation.map((item, i) => (
             <NavLink
               to={item.to}
               key={i}
-              className="hover:bg-blue-100 rounded-lg h-16 flex items-center justify-center"
+              className="hover:bg-blue-100 dark:hover:text-black dark:text-gray-300 rounded-lg h-16 flex items-center justify-center"
             >
               <div className="text-center">
                 <div className="flex justify-center">{item.icon}</div>
@@ -27,7 +27,7 @@ export default function SideBar({ navigation, handleLogout }) {
           {!isAuthenticated ? (
             <NavLink
               to="/login"
-              className="hover:bg-blue-100 my-1 px-1 rounded-lg h-16 flex items-center justify-center"
+              className="hover:bg-blue-100 dark:hover:text-black dark:text-gray-300 my-1 px-1 rounded-lg h-16 flex items-center justify-center"
             >
               <div className="text-center">
                 <div className="flex justify-center">
@@ -40,7 +40,7 @@ export default function SideBar({ navigation, handleLogout }) {
             <Button
               type="button"
               onClick={handleLogout}
-              className="w-full hover:bg-blue-100 my-1 px-1 rounded-lg h-16 flex items-center justify-center"
+              className="w-full hover:bg-blue-100 dark:hover:text-black dark:text-gray-300 my-1 px-1 rounded-lg h-16 flex items-center justify-center"
             >
               <div className="text-center">
                 <div className="flex justify-center">
