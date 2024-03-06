@@ -1,12 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes } from 'react-router-dom'
 import { createContext, useContext, useReducer } from 'react'
 import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 
-import { GeneratePublicRoutes, GeneratePrivateRoutes } from './services/routes'
+import { generatePublicRoutes, generatePrivateRoutes, generateAdminPrivateRoutes } from './services/routes'
 import { reducer, initialState } from './services/authReducer'
-import NotFound from './components/NotFound/'
 import AuthService from './services/auth-service'
 
 function App() {
@@ -18,9 +17,9 @@ function App() {
         <Router>
           <ReactNotifications />
           <Routes>
-            {GeneratePublicRoutes()}
-            {GeneratePrivateRoutes(state.isAuthenticated)}
-            <Route path="*" element={<NotFound />} />
+            {generatePublicRoutes(state.isAuthenticated)}
+            {(state.roles.includes('User') || state.roles.length === 0) && generatePrivateRoutes(state.isAuthenticated)}
+            {state.roles.includes('Admin') && generateAdminPrivateRoutes(state.isAuthenticated)}
           </Routes>
         </Router>
       </GoogleOAuthProvider>

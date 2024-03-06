@@ -2,6 +2,7 @@ import { BsArrowLeftSquareFill, BsX } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
 
 import { BsArrowRightSquareFill } from 'react-icons/bs'
+import Button from '../../UI/Button'
 
 export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuthenticated }) {
   return (
@@ -25,6 +26,7 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
               to="/login"
               onClick={toggleNavbar}
               className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base"
+              end
             >
               <div className="flex items-center">
                 <BsArrowRightSquareFill />
@@ -38,6 +40,7 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
               key={i}
               onClick={toggleNavbar}
               className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base"
+              end
             >
               <div className="flex items-center">
                 {item.icon}
@@ -46,16 +49,16 @@ export default function Offcanvas({ navigation, toggleNavbar, isExpanded, isAuth
             </NavLink>
           ))}
           {isAuthenticated && (
-            <NavLink
+            <Button
               to="/logout"
               onClick={toggleNavbar}
-              className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base"
+              className="hover:bg-blue-100 dark:hover:text-gray-900 dark:text-gray-300 rounded-md block transition ease-in-out px-3 py-2 text-base w-full"
             >
               <div className="flex items-center">
                 <BsArrowLeftSquareFill />
                 <span className="mx-4">Đăng xuất</span>
               </div>
-            </NavLink>
+            </Button>
           )}
         </div>
       </div>

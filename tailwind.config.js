@@ -3,7 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      height: { 'full-minus-header': 'calc(100vh - 8rem)' },
+    },
   },
   plugins: [],
 }

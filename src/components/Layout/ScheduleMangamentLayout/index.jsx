@@ -4,12 +4,17 @@ import actions from '../../../services/authAction'
 import notificationService from '../../../services/notificationService'
 import Header from '../Header'
 import SideBar from '../SideBar'
-import { navigationDefault, navigationUser, navigationAdmin } from '../../../services/routes'
+import {
+  navigationDefault,
+  navigationUser,
+  navigationAdmin,
+  navigation_Schedule_Management,
+} from '../../../services/routes'
 
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useLayoutEffect, useState } from 'react'
 
-export default function DefaultLayout({ children }) {
+export default function ScheduleManagementLayout({ children }) {
   const { state, dispatch } = useAuth()
   const roles = state.roles
   const navigate = useNavigate()
@@ -42,7 +47,22 @@ export default function DefaultLayout({ children }) {
         <div className="sticky top-0 z-10">
           <Header navigation={navigation} handleLogout={handleLogout} />
         </div>
-        <div className="flex-1 bg-slate-100 dark:bg-zinc-600">{children}</div>
+        <div className="flex-1 bg-slate-100 dark:bg-zinc-600">
+          <div className="nav-schedule h-16 space-x-1 flex items-center">
+            {navigation_Schedule_Management.map((item, i) => {
+              return (
+                <NavLink
+                  to={item.to}
+                  key={i}
+                  className="border rounded-sm p-1 hover:text-blue-500 hover:border-b-blue-500 hover:border-b-2 transition duration-300"
+                >
+                  {item.name}
+                </NavLink>
+              )
+            })}
+          </div>
+          {children}
+        </div>
       </div>
     </div>
   )

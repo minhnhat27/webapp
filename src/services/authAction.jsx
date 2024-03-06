@@ -1,8 +1,11 @@
-export const LOGIN = {
-  type: 'LOGIN',
+const LOGIN = (roles) => {
+  return {
+    type: 'LOGIN',
+    roles: (roles && [...roles]) || [],
+  }
 }
 
-export const LOGOUT = {
+const LOGOUT = {
   type: 'LOGOUT',
 }
 

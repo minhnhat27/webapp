@@ -28,6 +28,7 @@ export default function SideBar({ navigation, handleLogout }) {
             <NavLink
               to="/login"
               className="hover:bg-blue-100 dark:hover:text-black dark:text-gray-300 my-1 px-1 rounded-lg h-16 flex items-center justify-center"
+              end
             >
               <div className="text-center">
                 <div className="flex justify-center">

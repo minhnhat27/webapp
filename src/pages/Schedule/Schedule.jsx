@@ -120,7 +120,6 @@ export default function Schedule() {
             <Wrapper
               onDragOver={handleDragOver}
               onDrop={handleDrop}
-              id="list"
               className="sticky space-y-2 px-4 top-16 min-w-40 max-h-96 min-h-36 overflow-auto text-base p-2 dark:bg-zinc-600"
             >
               {teaching.map((item, i) => (

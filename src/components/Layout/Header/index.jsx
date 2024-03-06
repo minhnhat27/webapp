@@ -22,8 +22,6 @@ export default function Header({ navigation, handleLogout }) {
   const [isExpandedProfile, setIsExpandedProfile] = useState(false)
 
   useEffect(() => {
-    // const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    // setDarkMode(darkModeMediaQuery.matches)
     const savedDarkMode = localStorage.getItem('isDarkMode')
     if (savedDarkMode !== null) {
       setDarkMode(JSON.parse(savedDarkMode))
@@ -85,7 +83,7 @@ export default function Header({ navigation, handleLogout }) {
           </div>
         ) : (
           <div className="mx-1 text-slate-600 dark:text-slate-200">
-            {currentUser.name} ({currentUser.userId})
+            {currentUser?.name} ({currentUser?.userId})
           </div>
         )}
         <Tippy
@@ -94,7 +92,7 @@ export default function Header({ navigation, handleLogout }) {
           visible={isExpandedProfile}
           onClickOutside={toggleProfile}
           render={(attrs) => (
-            <div tabIndex="-1" {...attrs} className="w-40 z-10">
+            <div tabIndex="-1" {...attrs} className="w-40">
               <Wrapper className="rounded-md nav dark:bg-zinc-800 dark:text-gray-300 flex flex-col p-2 space-y-1">
                 <NavLink
                   onClick={toggleProfile}

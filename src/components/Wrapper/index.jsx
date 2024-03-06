@@ -6,7 +6,7 @@ export default function Wrapper({ children, className, onDragOver, onDrop, onCli
       onClick={onClick}
       onDragOver={onDragOver}
       onDrop={onDrop}
-      className={`${style.wrapper} ${className} rounded-md overflow-auto w-full bg-white`}
+      className={`${style.wrapper} ${className} relative rounded-md overflow-auto w-full bg-white`}
     >
       {children}
     </div>

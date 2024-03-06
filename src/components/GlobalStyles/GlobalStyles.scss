@@ -44,3 +44,22 @@ body {
   background: rgb(96 165 250);
   color: whitesmoke;
 }
+
+.nav-schedule a.active {
+  border-bottom: 2px rgb(96 165 250) solid;
+}
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
