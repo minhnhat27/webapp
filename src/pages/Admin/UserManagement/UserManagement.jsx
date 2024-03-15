@@ -6,7 +6,7 @@ import AddUser from './AddUser'
 import notificationService from '../../../services/notificationService'
 import UpdateUser from './UpdateUser'
 import BlockUser from './BlockUser'
-import Confirm from '../../../components/Modal/Modal'
+import Confirm from '../../../components/Modal'
 
 export default function UserManagement() {
   const [users, setUsers] = useState([])

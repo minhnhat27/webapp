@@ -5,6 +5,7 @@ import { BsPencilFill } from 'react-icons/bs'
 import Button from '../../../components/UI/Button'
 import Input from '../../../components/UI/Input'
 import notificationService from '../../../services/notificationService'
+import DateOff from './DayOff'
 
 export default function Semester() {
   const [semesters, setSemesters] = useState([])
@@ -59,13 +60,15 @@ export default function Semester() {
               if (item.currentSemester) {
                 return (
                   <option key={i} value={item.id} className="italic font-medium">
-                    {item.id}
+                    Học kỳ {item.id[item.id.length - 1]} - {item.id.substring(0, item.id.indexOf('_'))}
                   </option>
                 )
               }
+
               return (
                 <option key={i} value={item.id}>
-                  {item.id}
+                  Học kỳ {item.id[item.id.length - 1]} - {item.id.substring(0, item.id.indexOf('_'))}
+                  {/* {item.id} */}
                 </option>
               )
             })}
@@ -81,15 +84,11 @@ export default function Semester() {
         <div className="flex space-x-2">
           <span>Ngày bắt đầu: </span>
           <div>
-            <Input
-              type="date"
-              min={new Date(currentSemester.startDate).toLocaleDateString('af-ZA')}
-              value={startDate}
-              onChange={(e) => handleChangeStartDate(e.target.value)}
-            />
+            <Input type="date" value={startDate} onChange={(e) => handleChangeStartDate(e.target.value)} />
           </div>
         </div>
       </div>
+      <DateOff />
     </>
   )
 }

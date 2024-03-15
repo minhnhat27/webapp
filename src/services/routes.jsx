@@ -13,6 +13,7 @@ import UserManagement from '../pages/Admin/UserManagement'
 import ScheduleManagement from '../pages/Admin/ScheduleManagement'
 import ScheduleManagementLayout from '../components/Layout/ScheduleMangamentLayout'
 import Semester from '../pages/Admin/Semester'
+import TeachingSchedule from '../pages/Admin/TeachingSchedule/TeachingSchedule'
 
 export const navigationDefault = [
   { name: 'Trang chủ', to: '/', icon: <BsHouseFill /> },
@@ -27,11 +28,11 @@ export const navigationAdmin = [
 ]
 
 export const navigation_Schedule_Management = [
-  { name: 'Quản lý lịch thực hành', to: '/schedule-management/practice' },
-  { name: 'Quản lý học phần', to: '/schedule-management/course' },
-  { name: 'Quản lý lịch giảng dạy', to: '/schedule-management/teaching' },
-  { name: 'Quản lý phòng học', to: '/schedule-management/room' },
   { name: 'Học kỳ - Năm học', to: '/schedule-management/semester' },
+  { name: 'Quản lý lịch giảng dạy', to: '/schedule-management/teaching' },
+  // { name: 'Quản lý lịch thực hành', to: '/schedule-management/practice' },
+  // { name: 'Quản lý học phần', to: '/schedule-management/course' },
+  // { name: 'Quản lý phòng học', to: '/schedule-management/room' },
 ]
 
 const publicRoutes = [
@@ -48,11 +49,11 @@ const privateRoutes = [
 ]
 
 const adminPrivateRoutes = [
-  { path: '/schedule-management', component: ScheduleManagement, layout: ScheduleManagementLayout },
+  { path: '/schedule-management', component: Semester, layout: ScheduleManagementLayout },
   { path: '/user-management', component: UserManagement },
 
   { path: '/schedule-management/practice', component: ScheduleManagement, layout: ScheduleManagementLayout },
-  { path: '/schedule-management/teaching', component: ScheduleManagement, layout: ScheduleManagementLayout },
+  { path: '/schedule-management/teaching', component: TeachingSchedule, layout: ScheduleManagementLayout },
   { path: '/schedule-management/room', component: ScheduleManagement, layout: ScheduleManagementLayout },
   { path: '/schedule-management/course', component: ScheduleManagement, layout: ScheduleManagementLayout },
   { path: '/schedule-management/semester', component: Semester, layout: ScheduleManagementLayout },

@@ -9,9 +9,18 @@ const setCurrentSemester = (data) => axios.post(Semester_URL + '/setCurrentSemes
 
 const setStartDate = (data) => axios.put(Semester_URL + '/setStartDate', data, { headers: authHeader() })
 
+const getDateOff = () => axios.get(Semester_URL + '/getDateOff', { headers: authHeader() })
+
+const addDateOff = (data) => axios.post(Semester_URL + '/addDateOff', data, { headers: authHeader() })
+
+const removeDateOff = (data) => axios.post(Semester_URL + '/removeDateOff', data, { headers: authHeader() })
+
 const SemesterManagement = {
   getSemesters,
   setCurrentSemester,
   setStartDate,
+  getDateOff,
+  addDateOff,
+  removeDateOff,
 }
 export default SemesterManagement

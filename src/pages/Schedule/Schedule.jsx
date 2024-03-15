@@ -157,7 +157,12 @@ export default function Schedule() {
                       <tr className="text-xs">
                         {[...Array(7)].map((_, dayIndex) => {
                           const currentDate = new Date(dateStart)
-                          currentDate.setDate(currentDate.getDate() * (weekIndex + 1) + dayIndex)
+                          currentDate.setTime(
+                            currentDate.getTime() +
+                              dayIndex * 24 * 60 * 60 * 1000 +
+                              weekIndex * (7 * 24 * 60 * 60 * 1000),
+                          )
+                          //currentDate.setDate(currentDate.getDate() * (weekIndex + 1) + dayIndex)
 
                           return <td key={dayIndex}>{currentDate.toLocaleDateString('en-GB')}</td>
                         })}
@@ -168,7 +173,12 @@ export default function Schedule() {
                         <th>Sáng</th>
                         {[...Array(7)].map((_, dayIndex) => {
                           const currentDate = new Date(dateStart)
-                          currentDate.setDate(currentDate.getDate() * (weekIndex + 1) + dayIndex)
+                          // currentDate.setDate(currentDate.getDate() * (weekIndex + 1) + dayIndex)
+                          currentDate.setTime(
+                            currentDate.getTime() +
+                              dayIndex * 24 * 60 * 60 * 1000 +
+                              weekIndex * (7 * 24 * 60 * 60 * 1000),
+                          )
 
                           if (dayOff.includes(currentDate.getTime())) {
                             return <td key={dayIndex} className="bg-slate-500"></td>
@@ -210,7 +220,12 @@ export default function Schedule() {
                         <th>Chiều</th>
                         {[...Array(7)].map((_, dayIndex) => {
                           const currentDate = new Date(dateStart)
-                          currentDate.setDate(currentDate.getDate() * (weekIndex + 1) + dayIndex)
+                          //currentDate.setDate(currentDate.getDate() * (weekIndex + 1) + dayIndex)
+                          currentDate.setTime(
+                            currentDate.getTime() +
+                              dayIndex * 24 * 60 * 60 * 1000 +
+                              weekIndex * (7 * 24 * 60 * 60 * 1000),
+                          )
 
                           if (dayOff.includes(currentDate.getTime())) {
                             return <td key={dayIndex} className="bg-slate-500"></td>

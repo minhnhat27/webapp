@@ -5,6 +5,8 @@ const User_URL = 'https://localhost:44304/api/admin/user'
 
 const getAllUser = () => axios.get(User_URL + '/getAllUser', { headers: authHeader() })
 
+const getActiveUsers = () => axios.get(User_URL + '/getActiveUsers', { headers: authHeader() })
+
 const getRoles = () => axios.get(User_URL + '/getRoles', { headers: authHeader() })
 
 const addUser = (data) => axios.post(User_URL + '/addUser', data, { headers: authHeader() })
@@ -22,5 +24,6 @@ const UserManagementService = {
   updateUser,
   blockUser,
   unblockUser,
+  getActiveUsers,
 }
 export default UserManagementService
